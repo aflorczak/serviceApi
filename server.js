@@ -1,4 +1,8 @@
 import app from './app.js';
+import express from "express";
+
+app.use(express.json());
+
 
 app.set("PORT", process.env.PORT || 8080);
 app.set("NODE_ENV", process.env.NODE_ENV || 'production');
