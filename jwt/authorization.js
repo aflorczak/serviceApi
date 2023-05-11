@@ -7,7 +7,6 @@ const globalAuthorization = (req, res, next, role) => {
         const token = authorization.split(' ')[1];
         try {
             const payload = jwt.verify(token, process.env.JWT_PRIVATE_KEY);
-            console.log(payload);
             if (payload.roles.find(userRole => userRole === role)) {
                 res.locals.payload = payload;
                 next();
