@@ -2,13 +2,7 @@ import express from "express";
 import getToken from "../../jwt/authentication.js";
 const router = express.Router();
 
-router.post('/registration', (req, res) => {
-    res.status(201); // lub error jak się nie uda + email potweirdzajacy
-    // register usera + verifed email sciezka + link na maila
-    res.json({
-        'msg': 'tutaj rejestrujemy nowego uzytkownika'
-    });
-});
+// Registration of a new user is possible only by the system administrator.
 
 router.post('/login', (req, res) => {
     const token = getToken(req);
